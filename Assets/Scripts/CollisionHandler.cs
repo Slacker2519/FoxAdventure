@@ -7,16 +7,23 @@ public class CollisionHandler : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D collision)
     {
-        var ItemWithTag = collision.gameObject.tag;
+        //var objTag = collision.gameObject.tag;
 
-        if (ItemWithTag == "Goal")
+        if (collision.gameObject.tag == "Goal")
         {
-            LoadNextLevel();
+            //LoadNextLevel();
+            Debug.Log(collision.gameObject.tag);
         }
-        else if (ItemWithTag == "Enemy")
+        else if (collision.gameObject.tag == "Enemy")
         {
-            ReloadLevel();
+            //ReloadLevel();
+            Debug.Log(collision.gameObject.tag);
         }
+    }
+
+    void Update()
+    {
+        
     }
 
     void LoadNextLevel()
@@ -33,7 +40,7 @@ public class CollisionHandler : MonoBehaviour
 
     void ReloadLevel()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex);
+        int currentsceneindex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentsceneindex);
     }
 }

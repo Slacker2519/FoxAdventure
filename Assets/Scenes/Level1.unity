@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 248866423}
   - component: {fileID: 248866422}
   m_Layer: 0
-  m_Name: frog-idle-1
+  m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20169,6 +20169,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 8379457008719099086, guid: eb35bca6fe1f4be4ab8a87232c22b504, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb35bca6fe1f4be4ab8a87232c22b504, type: 3}
 --- !u!1001 &4043742025460548847
@@ -20235,6 +20239,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5455066390666531912, guid: 17426d73ccd943443bb075a1fd48ddcc, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5455066390666531913, guid: 17426d73ccd943443bb075a1fd48ddcc, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -20277,6 +20285,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5455066390666531913, guid: 17426d73ccd943443bb075a1fd48ddcc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455066390666531915, guid: 17426d73ccd943443bb075a1fd48ddcc, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5455066390666531924, guid: 17426d73ccd943443bb075a1fd48ddcc, type: 3}
