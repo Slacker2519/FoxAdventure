@@ -5,25 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        //var objTag = collision.gameObject.tag;
+        var objTag = collision.gameObject.tag;
 
-        if (collision.gameObject.tag == "Goal")
+        if (objTag == "Goal")
         {
-            //LoadNextLevel();
-            Debug.Log(collision.gameObject.tag);
+            LoadNextLevel();
         }
-        else if (collision.gameObject.tag == "Enemy")
+        else if (objTag == "Enemy")
         {
-            //ReloadLevel();
-            Debug.Log(collision.gameObject.tag);
+            ReloadLevel();
         }
-    }
-
-    void Update()
-    {
-        
     }
 
     void LoadNextLevel()
