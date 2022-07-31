@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    [SerializeField] Animator deadVfx;
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         var objTag = collision.gameObject.tag;
@@ -15,7 +17,9 @@ public class CollisionHandler : MonoBehaviour
         }
         else if (objTag == "Enemy")
         {
-            ReloadLevel();
+            StartCoroutine(Dead());
+            StartCoroutine(ReloadLevel());
+            Debug.Log("fucking work man!!!");
         }
     }
 
@@ -31,9 +35,16 @@ public class CollisionHandler : MonoBehaviour
         SceneManager.LoadScene(nextSceneIndex);
     }
 
-    void ReloadLevel()
+    IEnumerator ReloadLevel()
     {
         int currentsceneindex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentsceneindex);
+        yield return new WaitForSeconds(5f);
+    }
+
+    IEnumerator Dead()
+    {
+        deadVfx.SetBool("IsDead", true);
+        yield return new WaitForSeconds(2f);
     }
 }
