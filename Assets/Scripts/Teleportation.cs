@@ -28,9 +28,6 @@ public class Teleportation : MonoBehaviour
         {
             player.transform.position = basePosition;
         }
-
-        Debug.Log("base range: " + baseRangeDistance);
-        Debug.Log("player distance" + playerDistance);
     }
 
     void Teleportable()
