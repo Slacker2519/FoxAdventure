@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CollisionHandler : MonoBehaviour
+public class ColliderHandler : MonoBehaviour
 {
     [SerializeField] Animator deadVfx;
 
@@ -17,9 +17,9 @@ public class CollisionHandler : MonoBehaviour
         }
         else if (objTag == "Enemy")
         {
-            StartCoroutine(Dead());
-            StartCoroutine(ReloadLevel());
-            Debug.Log("fucking work man!!!");
+            Dead();
+            Invoke("ReloadLevel", 1f);
+            Debug.Log(objTag);
         }
     }
 
@@ -35,16 +35,15 @@ public class CollisionHandler : MonoBehaviour
         SceneManager.LoadScene(nextSceneIndex);
     }
 
-    IEnumerator ReloadLevel()
+    void ReloadLevel()
     {
         int currentsceneindex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentsceneindex);
-        yield return new WaitForSeconds(5f);
     }
 
-    IEnumerator Dead()
+    void Dead()
     {
         deadVfx.SetBool("IsDead", true);
-        yield return new WaitForSeconds(2f);
+        GetComponent<Movement>().enabled = false;
     }
 }

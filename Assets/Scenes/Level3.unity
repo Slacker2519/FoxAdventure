@@ -677,11 +677,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5455066390666531913, guid: 17426d73ccd943443bb075a1fd48ddcc, type: 3}
   m_PrefabInstance: {fileID: 910734824}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &254916608 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5455066390666531916, guid: 17426d73ccd943443bb075a1fd48ddcc, type: 3}
-  m_PrefabInstance: {fileID: 910734824}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &257093305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1673,10 +1668,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4897088626894861678, guid: 17426d73ccd943443bb075a1fd48ddcc, type: 3}
-      propertyPath: deadVfx
-      value: 
-      objectReference: {fileID: 254916608}
     - target: {fileID: 5455066390666531913, guid: 17426d73ccd943443bb075a1fd48ddcc, type: 3}
       propertyPath: m_RootOrder
       value: 3
