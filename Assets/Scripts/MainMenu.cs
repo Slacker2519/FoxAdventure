@@ -1,20 +1,21 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
+using System.Runtime.CompilerServices;
 
 public class MainMenu : MonoBehaviour
-{
-    public static bool gameIsPause = false;
-
+{   
     public GameObject pausePanelShadow;
     public GameObject pauseButton;
+    
     public GameObject instruction;
-    //public GameObject player;
 
     public GameObject menuPanel;
     public GameObject settingPanel;
-    
-    [SerializeField] Slider volumeSlider = null;
+    public GameObject frameRateButton;
+
+    public AudioMixer audioMixer;
 
     void Start()
     {
@@ -25,18 +26,6 @@ public class MainMenu : MonoBehaviour
 
         menuPanel.SetActive(true);
         settingPanel.SetActive(false);
-    }
-
-    void Update()
-    {
-        if (instruction.activeInHierarchy == true)
-        {
-            Time.timeScale = 0f;
-        }
-        if (instruction.activeInHierarchy == false)
-        {
-            Time.timeScale = 1f;
-        }
     }
 
     public void GoToScene(string sceneName)
@@ -52,12 +41,8 @@ public class MainMenu : MonoBehaviour
 
     public void Pause(GameObject pausePanelShadow)
     {
-        gameIsPause = true;
-        if (gameIsPause == true)
-        {
-            pausePanelShadow.SetActive(true);
-            Time.timeScale = 0f;
-        }
+        pausePanelShadow.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void Resume(GameObject pausePanelShadow)
@@ -90,8 +75,29 @@ public class MainMenu : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        //AudioListener.volume = volume;
-        //Debug.Log(volume);
-        //PlayerPrefs.SetFloat("masterVolume", AudioListener.volume);
+        audioMixer.SetFloat("volume", volume);
+    }
+
+    public void SetQuality(int qualityIndex)
+    {
+        QualitySettings.SetQualityLevel(qualityIndex);
+    }
+
+    public void SetFrameRate(int frameIndex)
+    {
+        if (frameIndex == 0)
+        {
+            Application.targetFrameRate = 30;
+        } 
+        else if (frameIndex == 1)
+        {
+            Application.targetFrameRate = 60;
+        }
+        else
+        {
+            Application.targetFrameRate = 120;
+        }
+
+        DontDestroyOnLoad(frameRateButton);
     }
 }
