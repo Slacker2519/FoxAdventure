@@ -7,19 +7,24 @@ public class ColliderHandler : MonoBehaviour
 {
     [SerializeField] Animator deadVfx;
 
+    public Movement movement;
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         var objTag = collision.gameObject.tag;
 
-        if (objTag == "Goal")
+        if (objTag.Equals("Goal"))
         {
             LoadNextLevel();
         }
-        else if (objTag == "Enemy")
+        else if (objTag.Equals("Enemy") && movement.isDashing == false)
         {
             Dead();
             Invoke("ReloadLevel", 1f);
-            Debug.Log(objTag);
+        }
+        else if (objTag.Equals("Enemy") && movement.isDashing == true)
+        {
+            Destroy(collision.GetComponentInParent<EnemyBehavior>().gameObject);
         }
     }
 

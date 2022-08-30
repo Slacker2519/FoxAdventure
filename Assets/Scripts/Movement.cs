@@ -13,14 +13,32 @@ public class Movement : MonoBehaviour
     bool jump = false;
     bool crouch = false;
 
+    [HideInInspector] public bool isDashing;
+    public EnemyBehavior enemyBehavior;
+    
+    [SerializeField] float dashingTime = 0.01f;
+    [SerializeField] float dashingPower = 5f;
+    [SerializeField] Rigidbody2D rb;
+    [SerializeField] TrailRenderer trailRenderer;
+
     // Update is called once per frame
     void Update()
     {
+        if (isDashing)
+        {
+            return;
+        }
         WalkHandler();
+        DashingControl();
     }
 
     void FixedUpdate()
     {
+        if (isDashing)
+        {
+            return;
+        }
+
         Run();
     }
 
@@ -76,5 +94,28 @@ public class Movement : MonoBehaviour
     public void OnCrouching(bool isCrouching)
     {
         animator.SetBool("IsCrouching", isCrouching);
+    }
+
+    IEnumerator Dash()
+    {
+        enemyBehavior.canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        trailRenderer.emitting = true;
+        yield return new WaitForSeconds(dashingTime);
+        trailRenderer.emitting = false;
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+        enemyBehavior.canDash = true;
+    }
+
+    void DashingControl()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse1) && enemyBehavior.canDash)
+        {
+            StartCoroutine(Dash());
+        }
     }
 }
