@@ -7,10 +7,13 @@ public class ColliderHandler : MonoBehaviour
 {
     [SerializeField] Animator deadVfx;
 
+    [HideInInspector] public Collider2D other;
     public Movement movement;
+    public EnemyBehavior enemyBehavior;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        other = collision;
         var objTag = collision.gameObject.tag;
 
         if (objTag.Equals("Goal"))
@@ -24,7 +27,7 @@ public class ColliderHandler : MonoBehaviour
         }
         else if (objTag.Equals("Enemy") && movement.isDashing == true)
         {
-            Destroy(collision.GetComponentInParent<EnemyBehavior>().gameObject);
+            Destroy(collision.gameObject);
         }
     }
 

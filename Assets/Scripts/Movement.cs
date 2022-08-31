@@ -15,6 +15,7 @@ public class Movement : MonoBehaviour
 
     [HideInInspector] public bool isDashing;
     public EnemyBehavior enemyBehavior;
+    public ColliderHandler colliderHandler;
     
     [SerializeField] float dashingTime = 0.01f;
     [SerializeField] float dashingPower = 5f;
@@ -29,6 +30,10 @@ public class Movement : MonoBehaviour
             return;
         }
         WalkHandler();
+        if (!enemyBehavior.canDash)
+        {
+            return;
+        }
         DashingControl();
     }
 
@@ -113,7 +118,9 @@ public class Movement : MonoBehaviour
 
     void DashingControl()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1) && enemyBehavior.canDash)
+        if (enemyBehavior == null)
+            return;
+        if (Input.GetKeyDown(KeyCode.Mouse1) && enemyBehavior.canDash == true)
         {
             StartCoroutine(Dash());
         }

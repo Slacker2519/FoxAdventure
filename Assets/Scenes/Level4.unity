@@ -123,54 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &33268850
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 33268851}
-  - component: {fileID: 33268852}
-  m_Layer: 0
-  m_Name: deadzone
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &33268851
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33268850}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1282831467}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &33268852
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33268850}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.009258917, y: -0.025861531}
-  serializedVersion: 2
-  m_Radius: 0.13143843
 --- !u!1 &396162153
 GameObject:
   m_ObjectHideFlags: 3
@@ -416,7 +368,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadVfx: {fileID: 5455066389561353958}
+  other: {fileID: 0}
   movement: {fileID: 5455066389561353959}
+  enemyBehavior: {fileID: 1282831469}
 --- !u!1 &1282831464
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,6 +384,7 @@ GameObject:
   - component: {fileID: 1282831468}
   - component: {fileID: 1282831469}
   - component: {fileID: 1282831470}
+  - component: {fileID: 1282831471}
   m_Layer: 0
   m_Name: EnemyFrog
   m_TagString: Enemy
@@ -502,7 +457,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1628446394}
-  - {fileID: 33268851}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -558,6 +512,22 @@ CircleCollider2D:
   m_Offset: {x: -0.012170141, y: -0.024340224}
   serializedVersion: 2
   m_Radius: 0.079160206
+--- !u!58 &1282831471
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282831464}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.01, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.16
 --- !u!1 &1373216941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,6 +1450,7 @@ MonoBehaviour:
   runSpeed: 50
   isDashing: 0
   enemyBehavior: {fileID: 1282831469}
+  colliderHandler: {fileID: 1091717794}
   dashingTime: 0.1
   dashingPower: 9
   rb: {fileID: 5455066389561353952}
@@ -1550,7 +1521,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_JumpForce: 550
   m_CrouchSpeed: 0.36
-  m_MovementSmoothing: 0.12
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
@@ -1717,7 +1687,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.5
+  m_Time: 0.15
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -1726,7 +1696,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.5
+        value: 0.4444432
         inSlope: 0
         outSlope: 0
         tangentMode: 0

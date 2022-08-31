@@ -17,10 +17,10 @@ public class EnemyBehavior : MonoBehaviour
     {
         enemyPosition = this.transform.position;
         enemyRangeDistance = Vector2.Distance(enemyPosition, enemyRange.transform.position);
-        DashConsidtion();
+        Condition();
     }
 
-    void DashConsidtion()
+    void Condition()
     {
         canDash = false;
         playerPosition = player.transform.position;
