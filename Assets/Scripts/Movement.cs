@@ -14,8 +14,9 @@ public class Movement : MonoBehaviour
     bool crouch = false;
 
     [HideInInspector] public bool isDashing;
-    public EnemyBehavior enemyBehavior;
+    //public EnemyBehavior enemyBehavior;
     public ColliderHandler colliderHandler;
+    bool canDash = true; //
     
     [SerializeField] float dashingTime = 0.01f;
     [SerializeField] float dashingPower = 5f;
@@ -30,10 +31,10 @@ public class Movement : MonoBehaviour
             return;
         }
         WalkHandler();
-        if (!enemyBehavior.canDash)
-        {
-            return;
-        }
+        //if (!enemyBehavior.canDash)
+        //{
+        //    return;
+        //}
         DashingControl();
     }
 
@@ -103,7 +104,8 @@ public class Movement : MonoBehaviour
 
     IEnumerator Dash()
     {
-        enemyBehavior.canDash = false;
+        canDash = false;
+        //enemyBehavior.canDash = false;
         isDashing = true;
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
@@ -113,14 +115,16 @@ public class Movement : MonoBehaviour
         trailRenderer.emitting = false;
         rb.gravityScale = originalGravity;
         isDashing = false;
-        enemyBehavior.canDash = true;
+        yield return new WaitForSeconds(0.5f);
+        //enemyBehavior.canDash = true;
+        canDash = true;
     }
 
     void DashingControl()
     {
-        if (enemyBehavior == null)
-            return;
-        if (Input.GetKeyDown(KeyCode.Mouse1) && enemyBehavior.canDash == true)
+        //if (enemyBehavior == null)
+        //    return;
+        if (Input.GetKeyDown(KeyCode.Mouse1) && canDash/*enemyBehavior.canDash == true*/)
         {
             StartCoroutine(Dash());
         }
