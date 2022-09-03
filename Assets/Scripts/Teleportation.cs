@@ -4,29 +4,26 @@ using UnityEngine;
 
 public class Teleportation : MonoBehaviour
 {
-    Vector2 basePosition;   //position of teleport base
-    [SerializeField] Vector2 baseRange;     //position of furthest range teleport base can reaches
-    float baseRangeDistance;    //distance between teleport base position and furthest teleport range position
+    Vector2 basePosition;
+    [SerializeField] GameObject baseRange;
+    float baseRangeDistance;
 
     public GameObject player;
-    Vector2 playerPosition;     //position of player
-    float playerDistance;   //distance between player and teleport base
+    Vector2 playerPosition;
+    float playerDistance;
 
-    bool canTeleport = false;   //condition to teleport
-
-    void Awake()
-    {
-        basePosition = this.transform.position;
-        baseRangeDistance = Vector2.Distance(basePosition, baseRange);
-    }
+    bool canTeleport = false;
 
     // Update is called once per frame
     void Update()
     {
+        basePosition = this.transform.position;
+        baseRangeDistance = Vector2.Distance(basePosition, baseRange.transform.position);
+
         TeleportHandler();
         TeleportPlayer();
 
-        if (Input.GetKeyDown(KeyCode.P))    //measure some numbers for design game
+        if (Input.GetKeyDown(KeyCode.P))
         {
             Debug.Log("player in range to teleport:  " + canTeleport);
             Debug.Log("the range of teleport base:  " + baseRangeDistance);
@@ -34,7 +31,7 @@ public class Teleportation : MonoBehaviour
         }
     }
 
-    void TeleportPlayer()   //press key to teleport player to teleport base
+    void TeleportPlayer()
     {
         if (Input.GetMouseButtonDown(0) && canTeleport == true)
         {
