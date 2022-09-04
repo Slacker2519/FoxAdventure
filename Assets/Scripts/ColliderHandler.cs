@@ -20,12 +20,12 @@ public class ColliderHandler : MonoBehaviour
         {
             LoadNextLevel();
         }
-        else if (objTag.Equals("Enemy") && movement.isDashing == false)
+        if (objTag.Equals("Spikes"))
         {
             Dead();
             Invoke("ReloadLevel", 1f);
         }
-        else if (objTag.Equals("Enemy") && movement.isDashing == true)
+        if (objTag.Equals("Enemy") && movement.isDashing == true)
         {
             Destroy(collision.gameObject);
         }
