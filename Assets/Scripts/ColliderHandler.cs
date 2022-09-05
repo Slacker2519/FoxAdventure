@@ -20,7 +20,7 @@ public class ColliderHandler : MonoBehaviour
         {
             LoadNextLevel();
         }
-        if (objTag.Equals("Spikes"))
+        if (objTag.Equals("Spikes") || objTag.Equals("Enemy") && movement.isDashing == false)
         {
             Dead();
             Invoke("ReloadLevel", 1f);
