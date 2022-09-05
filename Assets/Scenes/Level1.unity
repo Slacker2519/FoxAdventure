@@ -19142,7 +19142,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 1010950893}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f7df806f8c75c174a9ca664881847b7d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -20462,6 +20462,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1805351985, guid: 6ebdcf919c84e7a4e986c0508d9c4bab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4823557522124431888, guid: 6ebdcf919c84e7a4e986c0508d9c4bab, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -20554,8 +20558,21 @@ PrefabInstance:
       propertyPath: menuPanel
       value: 
       objectReference: {fileID: 451206186}
+    - target: {fileID: 4823557522124431893, guid: 6ebdcf919c84e7a4e986c0508d9c4bab, type: 3}
+      propertyPath: instruction
+      value: 
+      objectReference: {fileID: 4823557522120017531}
+    - target: {fileID: 4823557523022748921, guid: 6ebdcf919c84e7a4e986c0508d9c4bab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4823557522120017531}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ebdcf919c84e7a4e986c0508d9c4bab, type: 3}
+--- !u!1 &4823557522120017531 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4823557523390188447, guid: 6ebdcf919c84e7a4e986c0508d9c4bab, type: 3}
+  m_PrefabInstance: {fileID: 4823557522120017530}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5455066388898884889
 PrefabInstance:
   m_ObjectHideFlags: 0
