@@ -97,7 +97,5 @@ public class MainMenu : MonoBehaviour
         {
             Application.targetFrameRate = 120;
         }
-
-        DontDestroyOnLoad(frameRateButton);
     }
 }
