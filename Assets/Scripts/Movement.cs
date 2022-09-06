@@ -16,7 +16,8 @@ public class Movement : MonoBehaviour
     [HideInInspector] public bool isDashing;
     //public EnemyBehavior enemyBehavior;
     public ColliderHandler colliderHandler;
-    bool canDash = true; //
+    bool canDash = true;
+    float dashCoolDown = 1f;
     
     [SerializeField] float dashingTime = 0.01f;
     [SerializeField] float dashingPower = 5f;
@@ -115,7 +116,7 @@ public class Movement : MonoBehaviour
         trailRenderer.emitting = false;
         rb.gravityScale = originalGravity;
         isDashing = false;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(dashCoolDown);
         //enemyBehavior.canDash = true;
         canDash = true;
     }

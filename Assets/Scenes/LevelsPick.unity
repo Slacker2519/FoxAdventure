@@ -252,8 +252,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 104, y: -106}
-  m_SizeDelta: {x: 120, y: 120}
+  m_AnchoredPosition: {x: 47.6, y: -52.1}
+  m_SizeDelta: {x: 56.2242, y: 56.2242}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &42092392
 MonoBehaviour:
@@ -525,8 +525,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -613,7 +613,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 135.6803, y: 137.048}
+  m_SizeDelta: {x: 62.3431, y: 62.9715}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &405862734
 MonoBehaviour:
@@ -746,7 +746,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000015258789, y: 0}
-  m_SizeDelta: {x: 1013.0892, y: 280}
+  m_SizeDelta: {x: 559.199, y: 154.5528}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &419830020
 MonoBehaviour:
@@ -1033,8 +1033,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1121,7 +1121,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 135.6803, y: 137.048}
+  m_SizeDelta: {x: 62.3431, y: 62.9715}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &697625617
 MonoBehaviour:
@@ -1334,10 +1334,10 @@ MonoBehaviour:
   pausePanelShadow: {fileID: 1047101087}
   pauseButton: {fileID: 1047101087}
   instruction: {fileID: 1047101087}
-  player: {fileID: 1047101087}
   menuPanel: {fileID: 1047101087}
   settingPanel: {fileID: 1047101087}
-  volumeSlider: {fileID: 1386842525}
+  frameRateButton: {fileID: 0}
+  audioMixer: {fileID: 0}
 --- !u!1 &898306487
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,8 +1534,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1653,7 +1653,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 135.6803, y: 137.048}
+  m_SizeDelta: {x: 62.3431, y: 62.9715}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1118030296
 MonoBehaviour:
@@ -1824,7 +1824,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 135.6803, y: 137.048}
+  m_SizeDelta: {x: 62.3431, y: 62.9715}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1216434526
 MonoBehaviour:
@@ -2164,8 +2164,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2289,7 +2289,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 135.6803, y: 137.048}
+  m_SizeDelta: {x: 62.3431, y: 62.9715}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1646410940
 MonoBehaviour:
@@ -2548,8 +2548,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

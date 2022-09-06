@@ -20519,10 +20519,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1805351985, guid: 6ebdcf919c84e7a4e986c0508d9c4bab, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4823557522124431888, guid: 6ebdcf919c84e7a4e986c0508d9c4bab, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -20617,10 +20613,6 @@ PrefabInstance:
       objectReference: {fileID: 451206186}
     - target: {fileID: 4823557522124431893, guid: 6ebdcf919c84e7a4e986c0508d9c4bab, type: 3}
       propertyPath: instruction
-      value: 
-      objectReference: {fileID: 4823557522120017531}
-    - target: {fileID: 4823557523022748921, guid: 6ebdcf919c84e7a4e986c0508d9c4bab, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 4823557522120017531}
     m_RemovedComponents: []
@@ -20744,7 +20736,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7165533, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

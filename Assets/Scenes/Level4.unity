@@ -5259,7 +5259,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7165533, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -14733,8 +14733,17 @@ PrefabInstance:
       propertyPath: menuPanel
       value: 
       objectReference: {fileID: 1353342028}
+    - target: {fileID: 4823557523022748921, guid: 6ebdcf919c84e7a4e986c0508d9c4bab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1679953414}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ebdcf919c84e7a4e986c0508d9c4bab, type: 3}
+--- !u!1 &1679953414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1805351985, guid: 6ebdcf919c84e7a4e986c0508d9c4bab, type: 3}
+  m_PrefabInstance: {fileID: 1679953413}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1717422921
 GameObject:
   m_ObjectHideFlags: 0
